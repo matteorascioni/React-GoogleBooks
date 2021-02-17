@@ -8,6 +8,7 @@ const ProfileScreen= () => {
     const toggle = () => setDropdownOpen(prevState => !prevState);
 
     return (
+        
         <div 
             className="d-flex justify-content-center align-items-center flex-column" style={{ marginTop: '80px' }}
         >

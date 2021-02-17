@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { Card, CardTitle, CardImg, CardBody, Button, Modal } from 'reactstrap';
 
 const Book = ({thumbnail, title, pageCount, language, description, authors, publisher, previewLink, infoLink}) => {
-  // States
+  // STATES
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
 
   return (
+    // BOOK RENDER
     <Card style={{ width: '233px' }} className='m-auto '>
       <CardImg
         top
@@ -18,6 +19,8 @@ const Book = ({thumbnail, title, pageCount, language, description, authors, publ
         <CardTitle className='card-title'>{title}</CardTitle>
         <Button color='primary' onClick={toggle}>More info</Button>
       </CardBody>
+
+      {/* BOOK MODAL */}
       <Modal isOpen={modal} toggle={toggle}>
         <div className='modal-header d-flex justify-content-center'>
           <h5 className='modal-title text-center' id='exampleModalLabel'>

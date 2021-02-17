@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Book from '../Book/Book';
 
-// Design Library
+// DESIGN LIBRARY
 import {
   InputGroup,
   Input,
@@ -19,13 +19,14 @@ import 'react-toastify/dist/ReactToastify.min.css';
 import './SearchBarApi.css';
 
 const SearchBarApi = () => {
-  // States
+  // STATES
   const [maxResults, setMaxResults] = useState(10);
   const [startIndex, setStartIndex] = useState(1);
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [cards, setCards] = useState([]);
-  // Handle Search
+
+  // HANDLE SEARCH
   const handleSubmit = () => {
     setLoading(true);
     if (maxResults > 40 || maxResults < 1) {
@@ -53,12 +54,12 @@ const SearchBarApi = () => {
         });
     }
   };
-  // Main Show Case
+  // MAIN SHOW CASE
   const mainHeader = () => {
+
     return (
       <div className='main-image d-flex justify-content-center align-items-center flex-column'>
-        {/* Overlay */}
-
+        {/* OVERLAY */}
         <img 
           className='mb-3'
           style={{ maxWidth: '40%' }}
@@ -105,6 +106,7 @@ const SearchBarApi = () => {
     );
   };
 
+  //BOOKS HANDLER
   const handleCards = () => {
     if (loading) {
       return (
@@ -123,6 +125,7 @@ const SearchBarApi = () => {
         }
 
         return (
+          // BOOK RENDER
           <div className='col-lg-4 mb-3' key={item.id}>
             <Book
               thumbnail={thumbnail}
@@ -145,7 +148,9 @@ const SearchBarApi = () => {
       );
     }
   };
+
   return (
+
     <div className='w-100 h-100'>
       {mainHeader()}
       {handleCards()}
